@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Study Schedule Optimizer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white shadow-xl p-8 rounded-lg w-full max-w-2xl">
+    <h1 class="text-3xl font-bold mb-6 text-center text-blue-700">📚 Study Schedule Optimizer</h1>
+
+    <form method="POST" class="space-y-4">
+      <input type="text" name="subjects" placeholder="Subjects (comma separated)" required class="w-full p-2 border rounded">
+      <input type="number" name="hours" placeholder="Daily Study Hours" required class="w-full p-2 border rounded">
+      <input type="number" name="difficulty" placeholder="Difficulty (1-10)" required class="w-full p-2 border rounded">
+      <input type="date" name="exam_date" required class="w-full p-2 border rounded">
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Generate Schedule</button>
+    </form>
+
+    {% if result %}
+    <div class="mt-6 p-4 border border-blue-200 bg-blue-50 rounded whitespace-pre-wrap">
+      <h2 class="text-xl font-semibold text-blue-800 mb-2">📋 Suggested Plan:</h2>
+      {{ result }}
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
